@@ -43,7 +43,7 @@ class TempAndLoctionWidget extends StatelessWidget {
               : '',
           style: Theme.of(context).textTheme.headlineSmall,
         ),
-        const SizedBox(height: 40),
+        const SizedBox(height: 30),
         Column(
           children: [
             Row(
