@@ -7,12 +7,15 @@ import 'package:http/http.dart' as http;
 import 'package:weatherapp/model/weather-model.dart';
 import 'package:intl/intl.dart';
 
+import '../core/constant/constants.dart';
+
 class WeatherProvider with ChangeNotifier {
   WeatherModel? weatherData;
   bool isLoad = false;
+
   Future fetchData({required String city}) async {
-    String url =
-        'https://api.weatherapi.com/v1/forecast.json?key=1ce09f90208f4599a8d182740230911&q=$city&days=6&aqi=no&alerts=no';
+    isLoad = false;
+    String url = '${Constants.keyUrl}$city${Constants.daysUrl}';
 
     var jsonData = await http.get(Uri.parse(url));
     if (jsonData.statusCode == 200) {
@@ -21,8 +24,6 @@ class WeatherProvider with ChangeNotifier {
       WeatherModel weatherDataObj = WeatherModel.fromJson(data);
 
       weatherData = weatherDataObj;
-
-      print(weatherData);
     }
     isLoad = true;
     notifyListeners();

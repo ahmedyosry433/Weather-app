@@ -6,6 +6,8 @@ class WeatherModel {
   final temp;
   final conditionText;
   final conditionIcon;
+  final data;
+  final List forecastdays;
 
   WeatherModel({
     required this.cityName,
@@ -13,6 +15,8 @@ class WeatherModel {
     required this.temp,
     required this.conditionText,
     required this.conditionIcon,
+    required this.data,
+    required this.forecastdays,
   });
 
   factory WeatherModel.fromJson(Map<String, dynamic> json) {
@@ -22,6 +26,8 @@ class WeatherModel {
       temp: json['current']['temp_c'],
       conditionText: json['current']['condition']['text'],
       conditionIcon: json['current']['condition']['icon'],
+      data: json['forecast']['forecastday'][0]['date'],
+      forecastdays: json['forecast']['forecastday'],
     );
   }
 }
