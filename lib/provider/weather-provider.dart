@@ -12,18 +12,24 @@ import '../core/constant/constants.dart';
 class WeatherProvider with ChangeNotifier {
   WeatherModel? weatherData;
   bool isLoad = false;
-
+  bool isNotExist = false;
   Future fetchData({required String city}) async {
     isLoad = false;
+    isNotExist = false;
     String url = '${Constants.keyUrl}$city${Constants.daysUrl}';
+    try {
+      var jsonData = await http.get(Uri.parse(url));
 
-    var jsonData = await http.get(Uri.parse(url));
-    if (jsonData.statusCode == 200) {
-      final data = jsonDecode(jsonData.body);
+      if (jsonData.statusCode == 200) {
+        final data = jsonDecode(jsonData.body);
 
-      WeatherModel weatherDataObj = WeatherModel.fromJson(data);
-
-      weatherData = weatherDataObj;
+        WeatherModel weatherDataObj = WeatherModel.fromJson(data);
+        weatherData = weatherDataObj;
+      } else {
+        isNotExist = true;
+      }
+    } catch (e) {
+      throw Exception('__________$e');
     }
     isLoad = true;
     notifyListeners();

@@ -28,7 +28,7 @@ class ForCostDaysWidget extends StatelessWidget {
                 children: [
                   Text(
                     subProviders.convertDataToDayName(forcastdayData['date']),
-                    style: Theme.of(context).textTheme.titleMedium,
+                    style: Theme.of(context).textTheme.bodyMedium,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -67,7 +67,7 @@ class ForCostDaysWidget extends StatelessWidget {
                     children: [
                       Text(
                         '${forcastdayData['day']['avgtemp_c'].toInt()}',
-                        style: Theme.of(context).textTheme.titleMedium,
+                        style: Theme.of(context).textTheme.bodyMedium,
                       ),
                       Container(
                         height: 8,

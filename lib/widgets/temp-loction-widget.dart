@@ -30,7 +30,7 @@ class TempAndLoctionWidget extends StatelessWidget {
             const SizedBox(width: 15),
             Text(
               weatherDataFromProvider != null
-                  ? '${weatherDataFromProvider.cityName}, ${weatherDataFromProvider.country.length >= 8 ? weatherDataFromProvider.country.substring(0, 9) : weatherDataFromProvider.country}'
+                  ? '${weatherDataFromProvider.cityName.length >= 8 ? weatherDataFromProvider.cityName.substring(0, 9) : weatherDataFromProvider.cityName}, ${weatherDataFromProvider.country.length >= 8 ? weatherDataFromProvider.country.substring(0, 9) : weatherDataFromProvider.country}'
                   : '',
               style: Theme.of(context).textTheme.headlineMedium,
             ),

@@ -16,7 +16,7 @@ ThemeData getThemeDataLight() => ThemeData(
             color: AppColors.whiteColor),
         headlineSmall: TextStyle(fontSize: 25, color: AppColors.whiteColor),
         titleLarge: TextStyle(fontSize: 22, color: AppColors.orangeColor),
-        titleMedium: TextStyle(fontSize: 20, color: AppColors.whiteColor),
         titleSmall: TextStyle(fontSize: 15, color: AppColors.orangeColor),
+        bodyMedium: TextStyle(fontSize: 20, color: AppColors.whiteColor),
       ),
     );

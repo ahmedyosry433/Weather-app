@@ -22,7 +22,10 @@ class SearchWidget extends StatelessWidget {
               // onChanged: (value) =>
               //     subProvider.fetchData(city: value),
               onEditingComplete: () {
-                subProvider.fetchData(city: searchController.text);
+                if (searchController.text != '') {
+                  subProvider.fetchData(city: searchController.text);
+                  FocusScope.of(context).unfocus();
+                }
                 FocusScope.of(context).unfocus();
               },
               decoration: InputDecoration(

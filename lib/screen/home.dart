@@ -42,14 +42,25 @@ class _HomePageState extends State<HomePage> {
                 width: double.infinity,
                 color: AppColors.primaryColor,
                 child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      SearchWidget(),
-                      const TempAndLoctionWidget(),
-                      const SizedBox(height: 10),
-                      const ForCostDaysWidget()
-                    ],
-                  ),
+                  child: !subProviders.isNotExist
+                      ? Column(
+                          children: [
+                            SearchWidget(),
+                            const TempAndLoctionWidget(),
+                            const SizedBox(height: 10),
+                            const ForCostDaysWidget()
+                          ],
+                        )
+                      : Column(
+                          children: [
+                            SearchWidget(),
+                            Image.asset('assets/image/notfound.png'),
+                            Text(
+                              'No Matching Location Found.',
+                              style: Theme.of(context).textTheme.headlineMedium,
+                            )
+                          ],
+                        ),
                 ),
               ),
       ),
