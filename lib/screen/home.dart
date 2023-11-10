@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_null_comparison
+
 import 'dart:ui';
 
 import 'package:loading_animation_widget/loading_animation_widget.dart';
@@ -36,14 +38,13 @@ class _HomePageState extends State<HomePage> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
-      
           body: !subProviders.isLoad
               ? Stack(
                   alignment: Alignment.center,
                   children: [
                     // Background Image
                     Image.asset(
-                      'assets/image/00.jpg',
+                      'assets/image/splash.jpg',
                       width: double.infinity,
                       height: double.infinity,
                       fit: BoxFit.cover,
@@ -150,7 +151,26 @@ class _HomePageState extends State<HomePage> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Image.asset(
-                                    'assets/image/sunny.png',
+                                    weatherDataFromProvider!.conditionText ==
+                                            'Sunny'
+                                        ? 'assets/image/sunny.png'
+                                        : weatherDataFromProvider
+                                                    .conditionText ==
+                                                'Over cast'
+                                            ? 'assets/image/overCast.png'
+                                            : weatherDataFromProvider
+                                                        .conditionText ==
+                                                    'Partly cloudy'
+                                                ? 'assets/image/partly cloudy.png'
+                                                : weatherDataFromProvider
+                                                            .conditionText ==
+                                                        'Clear'
+                                                    ? 'assets/image/clear.png'
+                                                    : weatherDataFromProvider
+                                                                .conditionText ==
+                                                            'Patchy rain possible'
+                                                        ? 'assets/image/patch rain.png'
+                                                        : 'assets/image/sunny.png',
                                     width: 40,
                                     height: 40,
                                   ),
