@@ -2,6 +2,10 @@
 
 Welcome to the Weather App repository! This Flutter-based mobile application delivers real-time weather updates and forecasts, utilizing a public weather API for seamless data retrieval. The app allows users to check the temperature of a specific city, search for any city, and view the next three days' forecasts. With state management powered by Provider, the app ensures a smooth and responsive user interface.
 
+## Screenshots
+
+![Screenshot 1](<insert_screenshot1_link_here>)
+
 ## Features
 
 1. **City Temperature**
@@ -23,20 +27,10 @@ Welcome to the Weather App repository! This Flutter-based mobile application del
 
 To install the Weather App on your device, follow these steps:
 
-1. Download the APK file from the [Google Drive link](<insert_google_drive_link_here>).
+1. Download the APK file from the [Google Drive link](<https://drive.google.com/drive/u/1/folders/1hplTvObVym8KMyE9-LftXZ3WBSxzs9gW>).
 2. Enable installation from unknown sources in your device settings.
 3. Install the APK file on your device.
 
-## Screenshots
-
-![Screenshot 1](<insert_screenshot1_link_here>)
-*Caption for Screenshot 1*
-
-![Screenshot 2](<insert_screenshot2_link_here>)
-*Caption for Screenshot 2*
-
-![Screenshot 3](<insert_screenshot3_link_here>)
-*Caption for Screenshot 3*
 
 ## Getting Started
 
