@@ -27,10 +27,10 @@ class TempAndLoctionWidget extends StatelessWidget {
                   shape: BoxShape.circle,
                   border: Border.all(color: AppColors.whiteColor, width: 4)),
             ),
-            const SizedBox(width: 15),
+            const SizedBox(width: 10),
             Text(
               weatherDataFromProvider != null
-                  ? '${weatherDataFromProvider.cityName.length >= 9 ? weatherDataFromProvider.cityName.substring(0, 9) : weatherDataFromProvider.cityName}, ${weatherDataFromProvider.country.length >= 9 ? weatherDataFromProvider.country.substring(0, 9) : weatherDataFromProvider.country}'
+                  ? '${weatherDataFromProvider.region.length >= 9 ? weatherDataFromProvider.region.substring(0, 9) : weatherDataFromProvider.region}${weatherDataFromProvider.region == "" ? '' : ','} ${weatherDataFromProvider.cityName.length >= 9 ? weatherDataFromProvider.cityName.substring(0, 9) : weatherDataFromProvider.cityName}, ${weatherDataFromProvider.country.length >= 9 ? weatherDataFromProvider.country.substring(0, 9) : weatherDataFromProvider.country}'
                   : '',
               style: Theme.of(context).textTheme.headlineMedium,
             ),

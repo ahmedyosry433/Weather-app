@@ -32,6 +32,8 @@ class WeatherProvider with ChangeNotifier {
       throw Exception('__________$e');
     }
     isLoad = true;
+    print(
+        '_______________HOW_____________________${weatherData!.forecastdays.length}');
     notifyListeners();
   }
 

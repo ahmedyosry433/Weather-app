@@ -7,6 +7,7 @@ class WeatherModel {
   final conditionText;
   final conditionIcon;
   final data;
+  final region;
   final List forecastdays;
 
   WeatherModel({
@@ -16,12 +17,14 @@ class WeatherModel {
     required this.conditionText,
     required this.conditionIcon,
     required this.data,
+    required this.region,
     required this.forecastdays,
   });
 
   factory WeatherModel.fromJson(Map<String, dynamic> json) {
     return WeatherModel(
       cityName: json['location']['name'],
+      region: json['location']['region'],
       country: json['location']['country'],
       temp: json['current']['temp_c'],
       conditionText: json['current']['condition']['text'],
