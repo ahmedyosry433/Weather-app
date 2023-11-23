@@ -36,7 +36,7 @@ class WeatherProvider with ChangeNotifier {
         '_______________HOW_____________________${weatherData!.forecastdays.length}');
     notifyListeners();
   }
-
+ //convert date tima to day String
   String convertDataToDayName(String data) {
     DateTime date = DateTime.parse(data);
     var format = DateFormat('EEEE').format(date);
